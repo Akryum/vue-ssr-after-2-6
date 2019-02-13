@@ -5,17 +5,25 @@
     <Loading v-if="crew == null"/>
 
     <div v-else class="list">
-      <CrewMember
-        v-for="(member, index) of crew"
-        :key="index"
-        :member="member"
-      />
+      <div
+        v-for="member of crew"
+        :key="member.id"
+        class="member"
+      >
+        <router-link
+          :to="{
+            name: 'crew-details',
+            params: { id: member.id }
+          }"
+        >
+          {{ member.firstname }} {{ member.lastname }}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import CrewMember from './CrewMember.vue'
 import Loading from './Loading.vue'
 
 import { getCrewList } from '../api'
@@ -23,7 +31,6 @@ import { mapState, mapMutations } from 'vuex'
 
 export default {
   components: {
-    CrewMember,
     Loading
   },
 
@@ -57,3 +64,11 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.member
+  margin-bottom 42px
+  a
+    text-decoration none
+    color inherit
+</style>
