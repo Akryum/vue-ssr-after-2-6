@@ -1,4 +1,4 @@
-# before-2-6
+# vue-ssr-after-2-6
 
 Slides: https://slides.com/akryum/vue-26-ssr-revolution
 
