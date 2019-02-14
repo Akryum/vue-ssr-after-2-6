@@ -8,7 +8,8 @@ export function createStore () {
     state () {
       return {
         crew: null,
-        crewDetails: {}
+        crewDetails: {},
+        status: null
       }
     },
     mutations: {
@@ -18,6 +19,10 @@ export function createStore () {
 
       setCrewDetails (state, member) {
         Vue.set(state.crewDetails, member.id, member)
+      },
+
+      setStatus (state, value) {
+        state.status = value
       }
     }
   })

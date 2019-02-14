@@ -1,8 +1,20 @@
 <template>
   <div id="app">
+    <SolarSystemStatus/>
+
     <router-view/>
   </div>
 </template>
+
+<script>
+import SolarSystemStatus from './components/SolarSystemStatus.vue'
+
+export default {
+  components: {
+    SolarSystemStatus
+  }
+}
+</script>
 
 <style lang="stylus">
 body
@@ -22,6 +34,7 @@ body,
   display flex
   align-items center
   justify-content center
+  flex-direction column
 
 img
   width 42px

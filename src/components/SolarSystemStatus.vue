@@ -36,8 +36,22 @@ export default {
 
     async loadStatus () {
       const result = await getSolarSystemStatus()
+      console.log(result)
       this.setStatus(result)
     }
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.solar-system-status
+  margin-bottom 42px
+  padding 32px
+  border-radius 6px
+  background #eee
+  display flex
+  align-items center
+
+.icon
+  margin-right 24px
+</style>
